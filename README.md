@@ -39,3 +39,7 @@ After configuring the cluster, you can start it and validate that the VMs are ge
 pro status
 ```
 Note, when VMs get deallocated, the VMs will detach from your subscription before they get terminated. The detachment is done using scheduled events and CycleCloud's jetpack will log the successful execution of the onTerminate.sh script that gets applied during the VM's initial configuration. 
+
+## Resources ##
+- [Ubuntu Pro Docs](https://documentation.ubuntu.com/pro/)
+- [CycleCloud Docs](https://learn.microsoft.com/en-us/azure/cyclecloud/overview?view=cyclecloud-8)
