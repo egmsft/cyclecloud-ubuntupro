@@ -11,12 +11,12 @@ This project integrates Ubuntu Pro with Azure CycleCloud to provide enhanced sec
 1. Open a terminal session in CycleCloud server with the CycleCloud CLI enabled.
 2. Clone the cyclecloud-ubuntupro repo
 ``` bash
-$ git clone  https://github.com/egmsft/cyclecloud-ubuntupro.git
+git clone  https://github.com/egmsft/cyclecloud-ubuntupro.git
 ```
 3. Swtich to the `cyclecloud-ubuntupro` project directory and upload the project to the cyclecloud locker.
 ``` bash
-$ cd cyclecloud-ubuntupro/
-$ cyclecloud project upload <locker name>
+cd cyclecloud-ubuntupro/
+cyclecloud project upload <locker name>
 ```
 
 4. Import the required template
@@ -33,11 +33,15 @@ cyclecloud import_template -f templates/slurm-ubuntupro.txt -c Slurm slurm-ubunt
 
 ## Testing the cluster ##
 
-After configuring the cluster, you can start it and validate that the VMs are getting attached to your subscription. 
+After configuring the cluster, you can start it and validate that the VMs are getting attached to your subscription with the following command: 
 
 ``` bash
 pro status
 ```
+The output of the command should look something like this: 
+![image](https://github.com/user-attachments/assets/76e41411-5d05-47c9-af2f-f0f44f938b04)
+
+
 Note, when VMs get deallocated, the VMs will detach from your subscription before they get terminated. The detachment is done using scheduled events and CycleCloud's jetpack will log the successful execution of the onTerminate.sh script that gets applied during the VM's initial configuration. 
 
 ## Resources ##
